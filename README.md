@@ -73,85 +73,127 @@ University President
 │           ├── Teacher W
 │           └── Teacher X
 
-# Technical Requirements
+```
 
-## Frontend
+---
 
-Framework: React
+## **Technical Requirements**
 
-UI Library: Mantine| shadcn
+### **Frontend**
 
-Styles: TailwindCSS
+- **Framework**: React
+- **UI Library**: Mantine
+- **Styles**: TailwindCSS
+- **Forms**: React Hook Form with optional validation using Yup
 
-Forms: React Hook Form with optional validation using Zod
+### **Backend**
 
-HTTP Client: Axios
+- **API**: REST API using Firebase Database REST API, Mockoon, or other mock APIs
+- **HTTP Client**: Axios
 
-State Management
+### **State Management**
 
-Redux Toolkit: For managing the application state.
+- **Redux Toolkit**: For managing the application state.
 
-Utilities
+### **Utilities**
 
-Lodash: For data handling (e.g., tree structure).
+- **Lodash**: For data handling (e.g., tree structure).
 
-## Backend
+---
 
-API: REST API using Firebase Database REST API, Mockoon, or other mock APIs
-![alt text](image.png)
+## **Data Model**
 
-## Installation
+| **Column**    | **Type** | **Description**                                                |
+| ------------- | -------- | -------------------------------------------------------------- |
+| `id`          | `int`    | Unique identifier for each position.                           |
+| `name`        | `string` | Name of the position (e.g., "School of Computing").            |
+| `description` | `string` | Details or information about the position.                     |
+| `parentId`    | `int`    | ID of the parent position (null for the root position).        |
+| `type`        | `string` | The type of position (e.g., "institute", "school", "teacher"). |
 
-1. Clone the Repository
+---
 
+## **Installation**
+
+### 1. Clone the Repository
+
+```bash
 git clone <repository-url>
-cd react-base-code
+cd university-hierarchy-spa
+```
 
-2. Install Dependencies
+### 2. Install Dependencies
 
-npm install or npm install --legacy-peer-deps
+```bash
+npm install
+```
 
-3. Start the Development Server
+### 3. Start the Development Server
 
+```bash
 npm start
+```
 
-# Usage
+---
 
-## Add a Position
+## **Usage**
 
-Click on a node in the hierarchy.
+### Add a Position
 
-Click "Add" and fill in the form.
+1. Click on a node in the hierarchy.
+2. Click "Add" and fill in the form.
+3. Submit to save the position.
 
-Submit to save the position.
+### Edit a Position
 
-## Edit a Position
+1. Select a node in the hierarchy.
+2. Click "Edit" and update the details.
+3. Submit to save changes.
 
-Select a node in the hierarchy.
+### Delete a Position
 
-Click "Edit" and update the details.
+1. Select a node in the hierarchy.
+2. Click "Delete" to remove the position and all its children.
 
-Submit to save changes.
+---
 
-## Delete a Position
+## **Tree Rendering Logic**
 
-Select a node in the hierarchy.
-
-Click "Delete" to remove the position and all its children.
-
-## Tree Rendering Logic
-
+```jsx
 function renderTree(node, data) {
-  const children = data.filter(item => item.parentId === node.id);
+  const children = data.filter((item) => item.parentId === node.id);
   return (
     <ul key={node.id}>
-      <li>{node.name} ({node.type})</li>
-      {children.map(child => renderTree(child, data))}
+      <li>
+        {node.name} ({node.type})
+      </li>
+      {children.map((child) => renderTree(child, data))}
     </ul>
   );
 }
 
 // Example usage
-const rootNode = data.find(item => item.parentId === null);
+const rootNode = data.find((item) => item.parentId === null);
 const tree = renderTree(rootNode, data);
 ```
+
+---
+
+## **Features Roadmap**
+
+- [x] Dynamic tree rendering.
+- [x] CRUD operations for hierarchy nodes.
+- [ ] Drag-and-drop for rearranging nodes.
+- [ ] Search functionality to locate nodes quickly.
+
+---
+
+## **Contributing**
+
+Feel free to fork the repository, create feature branches, and submit pull requests. Contributions are welcome!
+
+---
+
+## **License**
+
+This project is open-source and available under the [MIT License](LICENSE).
