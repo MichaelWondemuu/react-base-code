@@ -82,9 +82,9 @@ University President
 ### **Frontend**
 
 - **Framework**: React
-- **UI Library**: Mantine
+- **UI Library**: Mantine or shadcn
 - **Styles**: TailwindCSS
-- **Forms**: React Hook Form with optional validation using Yup
+- **Forms**: React Hook Form with optional validation using Zod
 
 ### **Backend**
 
