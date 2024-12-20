@@ -200,9 +200,9 @@ Feel free to fork the repository, create feature branches, and submit pull reque
 
 ## **Authors**
 
-- @michaelwondemuu ([GitHub Profile](https://github.com/MichaelWondemuu))
 - @demeke-getaneh
 - @Tesfa-michael
+- @michaelwondemuu ([GitHub Profile](https://github.com/MichaelWondemuu))
 
 ---
 
