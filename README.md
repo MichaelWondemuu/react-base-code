@@ -1,7 +1,5 @@
 # University Hierarchy of Wodia University
 
-Author: @michaelwondemuu
-
 ## **Overview**
 
 This project is a Single Page Application (SPA) designed to manage and display a hierarchical structure of a university. The application allows CRUD operations for hierarchical positions, including the following:
