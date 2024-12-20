@@ -196,6 +196,16 @@ Feel free to fork the repository, create feature branches, and submit pull reque
 
 ---
 
+---
+
+## **Authors**
+
+- @michaelwondemuu ([GitHub Profile](https://github.com/MichaelWondemuu))
+- @demeke-getaneh
+- @Tesfa-michael
+
+---
+
 ## **License**
 
 This project is open-source and available under the [MIT License](LICENSE).
