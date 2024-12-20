@@ -1,4 +1,6 @@
-# University Hierarchy SPA
+# University Hierarchy of Wodia University
+
+Author: @michaelwondemuu
 
 ## **Overview**
 
