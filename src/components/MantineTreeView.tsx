@@ -87,32 +87,32 @@ const TreeView: React.FC = () => {
         <div className="flex items-center">
           {node.children && node.children.length > 0 && (
             <span
-              className="cursor-pointer text-xl"
+              className="cursor-pointer text-xl h-9"
               onClick={() => toggleNode(node.id)}
             >
               {expandedNodes.has(node.id) ? '[-]' : '[+]'}
             </span>
           )}
-          <strong className="font-semibold text-lg mr-1">{node.name}</strong>
+          <strong className="font-semibold text-lg mr-1 h-9">{node.name}</strong>
           {hoveredNodeId === node.id && (
-            <div className="flex p-5">
+            <div className="flex gap-x-2 ml-7">
               <Button
                 onClick={() => handleEditNode(node)}
-                className="p-2 bg-yellow-400 text-white rounded hover:bg-yellow-500 transition text-xs"
+                className=" bg-yellow-400 text-white rounded hover:bg-yellow-500 transition text-xs"
                 title="Edit Node"
               >
                 ✏️
               </Button>
               <Button
                 onClick={() => handleDeleteNode(node.id)}
-                className="p-2 bg-red-400 text-white rounded hover:bg-red-500 transition text-xs"
+                className="bg-red-400 text-white rounded hover:bg-red-500 transition text-xs"
                 title="Delete Node"
               >
                 🗑️
               </Button>
               <Button
                 onClick={() => handleAddNode(node.id)}
-                className="p-2 bg-blue-400 text-white rounded hover:bg-blue-500 transition text-xs"
+                className=" bg-blue-400 text-white rounded hover:bg-blue-500 transition text-xs"
                 title="Add Node"
               >
                 ➕

@@ -1,321 +1,326 @@
 {
   "tree": [
-    
-      {
-        "id": 1,
-        "name": "University President",
-        "description": "The President of the University",
-        "parentId": null,
-        "type": "presidant"
-      },
-      {
-        "id": 2,
-        "name": "Institute of IoT",
-        "description": "Institute focused on IoT research",
-        "parentId": 1,
-        "type": "institute"
-      },
-      {
-        "id": 3,
-        "name": "School of Computing",
-        "description": "School offering computer science and software engineering courses",
-        "parentId": 2,
-        "type": "school"
-      },
-      {
-        "id": 4,
-        "name": "Department of Computer Science",
-        "description": "Department focusing on computer science education and research",
-        "parentId": 3,
-        "type": "department"
-      },
-      {
-        "id": 5,
-        "name": "Teacher A",
-        "description": "Professor of Computer Science",
-        "parentId": 4,
-        "type": "teacher"
-      },
-      {
-        "id": 6,
-        "name": "Teacher B",
-        "description": "Professor of Computer Science",
-        "parentId": 4,
-        "type": "teacher"
-      },
-      {
-        "id": 7,
-        "name": "Department of Software Engineering",
-        "description": "Department offering software engineering programs",
-        "parentId": 3,
-        "type": "department"
-      },
-      {
-        "id": 8,
-        "name": "Teacher C",
-        "description": "Professor of Software Engineering",
-        "parentId": 7,
-        "type": "teacher"
-      },
-      {
-        "id": 9,
-        "name": "Teacher D",
-        "description": "Professor of Software Engineering",
-        "parentId": 7,
-        "type": "teacher"
-      },
-      {
-        "id": 10,
-        "name": "School of Electrical and Mechanical",
-        "description": "School offering electrical and mechanical engineering programs",
-        "parentId": 2,
-        "type": "school"
-      },
-      {
-        "id": 11,
-        "name": "Department of Electrical eng.",
-        "description": "Department focusing on electrical engineering",
-        "parentId": 10,
-        "type": "department"
-      },
-      {
-        "id": 12,
-        "name": "Teacher E",
-        "description": "Professor of Electrical Engineering",
-        "parentId": 11,
-        "type": "teacher"
-      },
-      {
-        "id": 13,
-        "name": "Teacher F",
-        "description": "Professor of Electrical Engineering",
-        "parentId": 11,
-        "type": "teacher"
-      },
-      {
-        "id": 14,
-        "name": "Department of Mechanical eng",
-        "description": "Department focused on mechanical engineering",
-        "parentId": 10,
-        "type": "department"
-      },
-      {
-        "id": 15,
-        "name": "Teacher G",
-        "description": "Professor of Mechanical Engineering",
-        "parentId": 14,
-        "type": "teacher"
-      },
-      {
-        "id": 16,
-        "name": "Teacher H",
-        "description": "Professor of Mechanical Engineering",
-        "parentId": 14,
-        "type": "teacher"
-      },
-      {
-        "id": 17,
-        "name": "School of Civil",
-        "description": "School offering civil engineering programs",
-        "parentId": 2,
-        "type": "school"
-      },
-      {
-        "id": 18,
-        "name": "Department of COTOM",
-        "description": "Department focusing on civil engineering and related fields",
-        "parentId": 17,
-        "type": "department"
-      },
-      {
-        "id": 19,
-        "name": "Teacher I",
-        "description": "Professor of Civil Engineering",
-        "parentId": 18,
-        "type": "teacher"
-      },
-      {
-        "id": 20,
-        "name": "Teacher J",
-        "description": "Professor of Civil Engineering",
-        "parentId": 18,
-        "type": "teacher"
-      },
-      {
-        "id": 21,
-        "name": "Department of Civil",
-        "description": "Department offering civil engineering courses",
-        "parentId": 17,
-        "type": "department"
-      },
-      {
-        "id": 22,
-        "name": "Teacher K",
-        "description": "Professor of Civil Engineering",
-        "parentId": 21,
-        "type": "teacher"
-      },
-      {
-        "id": 23,
-        "name": "Teacher L",
-        "description": "Professor of Civil Engineering",
-        "parentId": 21,
-        "type": "teacher"
-      },
-      {
-        "id": 24,
-        "name": "Institute of Social Science",
-        "description": "Institute focused on social science disciplines",
-        "parentId": 1,
-        "type": "institute"
-      },
-      {
-        "id": 25,
-        "name": "School of Humanities",
-        "description": "School offering humanities programs",
-        "parentId": 24,
-        "type": "school"
-      },
-      {
-        "id": 26,
-        "name": "Department of History",
-        "description": "Department offering history programs",
-        "parentId": 25,
-        "type": "department"
-      },
-      {
-        "id": 27,
-        "name": "Teacher M",
-        "description": "Professor of History",
-        "parentId": 26,
-        "type": "teacher"
-      },
-      {
-        "id": 28,
-        "name": "Teacher N",
-        "description": "Professor of History",
-        "parentId": 26,
-        "type": "teacher"
-      },
-      {
-        "id": 29,
-        "name": "Department of Literature",
-        "description": "Department offering literature programs",
-        "parentId": 25,
-        "type": "department"
-      },
-      {
-        "id": 30,
-        "name": "Teacher O",
-        "description": "Professor of Literature",
-        "parentId": 29,
-        "type": "teacher"
-      },
-      {
-        "id": 31,
-        "name": "Teacher P",
-        "description": "Professor of Literature",
-        "parentId": 29,
-        "type": "teacher"
-      },
-      {
-        "id": 32,
-        "name": "School of Behavioral Studies",
-        "description": "School offering behavioral science programs",
-        "parentId": 24,
-        "type": "school"
-      },
-      {
-        "id": 33,
-        "name": "Department of Psychology",
-        "description": "Department focusing on psychology programs",
-        "parentId": 32,
-        "type": "department"
-      },
-      {
-        "id": 34,
-        "name": "Teacher Q",
-        "description": "Professor of Psychology",
-        "parentId": 33,
-        "type": "teacher"
-      },
-      {
-        "id": 35,
-        "name": "Teacher R",
-        "description": "Professor of Psychology",
-        "parentId": 33,
-        "type": "teacher"
-      },
-      {
-        "id": 36,
-        "name": "Department of Sociology",
-        "description": "Department offering sociology programs",
-        "parentId": 32,
-        "type": "department"
-      },
-      {
-        "id": 37,
-        "name": "Teacher S",
-        "description": "Professor of Sociology",
-        "parentId": 36,
-        "type": "teacher"
-      },
-      {
-        "id": 38,
-        "name": "Teacher T",
-        "description": "Professor of Sociology",
-        "parentId": 36,
-        "type": "teacher"
-      },
-      {
-        "id": 39,
-        "name": "School of Social Policy",
-        "description": "School offering social policy programs",
-        "parentId": 24,
-        "type": "school"
-      },
-      {
-        "id": 40,
-        "name": "Department of Public Policy",
-        "description": "Department focusing on public policy education",
-        "parentId": 39,
-        "type": "department"
-      },
-      {
-        "id": 41,
-        "name": "Teacher U",
-        "description": "Professor of Public Policy",
-        "parentId": 40,
-        "type": "teacher"
-      },
-      {
-        "id": 42,
-        "name": "Teacher V",
-        "description": "Professor of Public Policy",
-        "parentId": 40,
-        "type": "teacher"
-      },
-      {
-        "id": 43,
-        "name": "Department of Political Science",
-        "description": "Department offering political science programs",
-        "parentId": 39,
-        "type": "department"
-      },
-      {
-        "id": 44,
-        "name": "Teacher W",
-        "description": "Professor of Political Science",
-        "parentId": 43,
-        "type": "teacher"
-      },
-      {
-        "id": 45,
-        "name": "Teacher X",
-        "description": "Professor of Political Science",
-        "parentId": 43,
-        "type": "teacher"
-      }
-    ]    
-  
+    {
+      "id": "1",
+      "name": "University President",
+      "description": "The President of the University",
+      "parentId": null,
+      "type": "presidant"
+    },
+    {
+      "id": "2",
+      "name": "Institute of IoT",
+      "description": "Institute focused on IoT research",
+      "parentId": 1,
+      "type": "institute"
+    },
+    {
+      "id": "3",
+      "name": "School of Computing",
+      "description": "School offering computer science and software engineering courses",
+      "parentId": 2,
+      "type": "school"
+    },
+    {
+      "id": "4",
+      "name": "Department of Computer Science",
+      "description": "Department focusing on computer science education and research",
+      "parentId": 3,
+      "type": "department"
+    },
+    {
+      "id": "5",
+      "name": "Teacher A",
+      "description": "Professor of Computer Science",
+      "parentId": 4,
+      "type": "teacher"
+    },
+    {
+      "id": "6",
+      "name": "Teacher B",
+      "description": "Professor of Computer Science",
+      "parentId": 4,
+      "type": "teacher"
+    },
+    {
+      "id": "7",
+      "name": "Department of Software Engineering",
+      "description": "Department offering software engineering programs",
+      "parentId": 3,
+      "type": "department"
+    },
+    {
+      "id": "8",
+      "name": "Teacher C",
+      "description": "Professor of Software Engineering",
+      "parentId": 7,
+      "type": "teacher"
+    },
+    {
+      "id": "9",
+      "name": "Teacher D",
+      "description": "Professor of Software Engineering",
+      "parentId": 7,
+      "type": "teacher"
+    },
+    {
+      "id": "10",
+      "name": "School of Electrical and Mechanical",
+      "description": "School offering electrical and mechanical engineering programs",
+      "parentId": 2,
+      "type": "school"
+    },
+    {
+      "id": "11",
+      "name": "Department of Electrical eng.",
+      "description": "Department focusing on electrical engineering",
+      "parentId": 10,
+      "type": "department"
+    },
+    {
+      "id": "12",
+      "name": "Teacher E",
+      "description": "Professor of Electrical Engineering",
+      "parentId": 11,
+      "type": "teacher"
+    },
+    {
+      "id": "13",
+      "name": "Teacher F",
+      "description": "Professor of Electrical Engineering",
+      "parentId": 11,
+      "type": "teacher"
+    },
+    {
+      "id": "14",
+      "name": "Department of Mechanical eng",
+      "description": "Department focused on mechanical engineering",
+      "parentId": 10,
+      "type": "department"
+    },
+    {
+      "id": "15",
+      "name": "Teacher G",
+      "description": "Professor of Mechanical Engineering",
+      "parentId": 14,
+      "type": "teacher"
+    },
+    {
+      "id": "16",
+      "name": "Teacher H",
+      "description": "Professor of Mechanical Engineering",
+      "parentId": 14,
+      "type": "teacher"
+    },
+    {
+      "id": "17",
+      "name": "School of Civil",
+      "description": "School offering civil engineering programs",
+      "parentId": 2,
+      "type": "school"
+    },
+    {
+      "id": "18",
+      "name": "Department of COTOM",
+      "description": "Department focusing on civil engineering and related fields",
+      "parentId": 17,
+      "type": "department"
+    },
+    {
+      "id": "20",
+      "name": "Teacher J",
+      "description": "Professor of Civil Engineering",
+      "parentId": 18,
+      "type": "teacher"
+    },
+    {
+      "id": "21",
+      "name": "Department of Civil",
+      "description": "Department offering civil engineering courses",
+      "parentId": 17,
+      "type": "department"
+    },
+    {
+      "id": "22",
+      "name": "Teacher K",
+      "description": "Professor of Civil Engineering",
+      "parentId": 21,
+      "type": "teacher"
+    },
+    {
+      "id": "23",
+      "name": "Teacher L",
+      "description": "Professor of Civil Engineering",
+      "parentId": 21,
+      "type": "teacher"
+    },
+    {
+      "id": "24",
+      "name": "Institute of Social Science",
+      "description": "Institute focused on social science disciplines",
+      "parentId": 1,
+      "type": "institute"
+    },
+    {
+      "id": "25",
+      "name": "School of Humanities",
+      "description": "School offering humanities programs",
+      "parentId": 24,
+      "type": "school"
+    },
+    {
+      "id": "26",
+      "name": "Department of History",
+      "description": "Department offering history programs",
+      "parentId": 25,
+      "type": "department"
+    },
+    {
+      "id": "27",
+      "name": "Teacher M",
+      "description": "Professor of History",
+      "parentId": 26,
+      "type": "teacher"
+    },
+    {
+      "id": "28",
+      "name": "Teacher N",
+      "description": "Professor of History",
+      "parentId": 26,
+      "type": "teacher"
+    },
+    {
+      "id": "29",
+      "name": "Department of Literature",
+      "description": "Department offering literature programs",
+      "parentId": 25,
+      "type": "department"
+    },
+    {
+      "id": "30",
+      "name": "Teacher O",
+      "description": "Professor of Literature",
+      "parentId": 29,
+      "type": "teacher"
+    },
+    {
+      "id": "31",
+      "name": "Teacher P",
+      "description": "Professor of Literature",
+      "parentId": 29,
+      "type": "teacher"
+    },
+    {
+      "id": "32",
+      "name": "School of Behavioral Studies",
+      "description": "School offering behavioral science programs",
+      "parentId": 24,
+      "type": "school"
+    },
+    {
+      "id": "33",
+      "name": "Department of Psychology",
+      "description": "Department focusing on psychology programs",
+      "parentId": 32,
+      "type": "department"
+    },
+    {
+      "id": "34",
+      "name": "Teacher Q",
+      "description": "Professor of Psychology",
+      "parentId": 33,
+      "type": "teacher"
+    },
+    {
+      "id": "35",
+      "name": "Teacher R",
+      "description": "Professor of Psychology",
+      "parentId": 33,
+      "type": "teacher"
+    },
+    {
+      "id": "36",
+      "name": "Department of Sociology",
+      "description": "Department offering sociology programs",
+      "parentId": 32,
+      "type": "department"
+    },
+    {
+      "id": "37",
+      "name": "Teacher S",
+      "description": "Professor of Sociology",
+      "parentId": 36,
+      "type": "teacher"
+    },
+    {
+      "id": "38",
+      "name": "Teacher T",
+      "description": "Professor of Sociology",
+      "parentId": 36,
+      "type": "teacher"
+    },
+    {
+      "id": "39",
+      "name": "School of Social Policy",
+      "description": "School offering social policy programs",
+      "parentId": 24,
+      "type": "school"
+    },
+    {
+      "id": "40",
+      "name": "Department of Public Policy",
+      "description": "Department focusing on public policy education",
+      "parentId": 39,
+      "type": "department"
+    },
+    {
+      "id": "41",
+      "name": "Teacher U",
+      "description": "Professor of Public Policy",
+      "parentId": 40,
+      "type": "teacher"
+    },
+    {
+      "id": "42",
+      "name": "Teacher V",
+      "description": "Professor of Public Policy",
+      "parentId": 40,
+      "type": "teacher"
+    },
+    {
+      "id": "43",
+      "name": "Department of Political Science",
+      "description": "Department offering political science programs",
+      "parentId": 39,
+      "type": "department"
+    },
+    {
+      "id": "44",
+      "name": "Teacher W",
+      "description": "Professor of Political Science",
+      "parentId": 43,
+      "type": "teacher"
+    },
+    {
+      "id": "45",
+      "name": "Teacher X",
+      "description": "Professor of Political Science",
+      "parentId": 43,
+      "type": "teacher"
+    },
+    {
+      "id": 1741263040189,
+      "name": "IT",
+      "description": "Information Technology",
+      "type": "department",
+      "parentId": 3
+    },
+    {
+      "id": 1741263068205,
+      "name": "Getasew",
+      "description": "lecturer",
+      "type": "teacher",
+      "parentId": 1741263040189
+    }
+  ]
 }
