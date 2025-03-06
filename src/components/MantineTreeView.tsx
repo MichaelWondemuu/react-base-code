@@ -1,12 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
 import { deleteNode, addNode, editNode } from '../store/hierarchySlice';
-import { List, Button, Collapse, Modal, Group, Text, Box, ActionIcon } from '@mantine/core';
-import { IconPlus, IconEdit, IconTrash, IconChevronRight, IconChevronDown } from '@tabler/icons-react';
-import NodeForm from './AddEditForm';
+import { List, Button, Collapse } from '@mantine/core';
+import NodeForm from './HookAddNodeForm';
 
-// Function to convert flat data to hierarchical tree structure
 const buildTree = (nodes: any[]) => {
   const nodeMap: { [key: number]: any } = {};
   const tree: any[] = [];
@@ -35,6 +33,8 @@ const TreeView: React.FC = () => {
   const [expandedNodes, setExpandedNodes] = useState<Set<number>>(new Set());
   const [parentNodeId, setParentNodeId] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [hoveredNodeId, setHoveredNodeId] = useState<number | null>(null);
+
   const hierarchicalTreeData = useMemo(() => buildTree(treeData), [treeData]);
 
   const toggleNode = (nodeId: number) => {
@@ -50,7 +50,7 @@ const TreeView: React.FC = () => {
   };
 
   const handleAddNode = (parentId: number | null) => {
-    setSelectedNode(null);
+    setSelectedNode(null);  // Reset the selected node for the "Add Node" action
     setParentNodeId(parentId);
     setActionType('add');
     setIsModalOpen(true);
@@ -73,50 +73,99 @@ const TreeView: React.FC = () => {
     } else if (actionType === 'edit' && selectedNode) {
       dispatch(editNode({ ...selectedNode, ...data }));
     }
-    setIsModalOpen(false);
+    setIsModalOpen(false);  // Close the modal after submission
   };
 
   const renderTree = (nodes: any[]) => {
     return nodes.map((node: any) => (
-      <List.Item key={node.id}>
-        <Group align="center">
+      <li
+        key={node.id}
+        className="ml-4 mb-4 list-none relative"
+        onMouseEnter={() => setHoveredNodeId(node.id)}
+        onMouseLeave={() => setHoveredNodeId(null)}
+      >
+        <div className="flex items-center">
           {node.children && node.children.length > 0 && (
-            <ActionIcon onClick={() => toggleNode(node.id)}>
-              {expandedNodes.has(node.id) ? <IconChevronDown size={18} /> : <IconChevronRight size={18} />}
-            </ActionIcon>
+            <span
+              className="cursor-pointer text-xl"
+              onClick={() => toggleNode(node.id)}
+            >
+              {expandedNodes.has(node.id) ? '[-]' : '[+]'}
+            </span>
           )}
-          <Text weight={500}>{node.name}</Text>
-          <Group spacing={4}>
-            <ActionIcon onClick={() => handleEditNode(node)} title="Edit Node" color="yellow">
-              <IconEdit size={16} />
-            </ActionIcon>
-            <ActionIcon onClick={() => handleDeleteNode(node.id)} title="Delete Node" color="red">
-              <IconTrash size={16} />
-            </ActionIcon>
-            <ActionIcon onClick={() => handleAddNode(node.id)} title="Add Node" color="blue">
-              <IconPlus size={16} />
-            </ActionIcon>
-          </Group>
-        </Group>
-        {node.children && node.children.length > 0 && (
-          <Collapse in={expandedNodes.has(node.id)}>
-            <List ml={20}>{renderTree(node.children)}</List>
-          </Collapse>
+          <strong className="font-semibold text-lg mr-1">{node.name}</strong>
+          {hoveredNodeId === node.id && (
+            <div className="flex p-5">
+              <Button
+                onClick={() => handleEditNode(node)}
+                className="p-2 bg-yellow-400 text-white rounded hover:bg-yellow-500 transition text-xs"
+                title="Edit Node"
+              >
+                ✏️
+              </Button>
+              <Button
+                onClick={() => handleDeleteNode(node.id)}
+                className="p-2 bg-red-400 text-white rounded hover:bg-red-500 transition text-xs"
+                title="Delete Node"
+              >
+                🗑️
+              </Button>
+              <Button
+                onClick={() => handleAddNode(node.id)}
+                className="p-2 bg-blue-400 text-white rounded hover:bg-blue-500 transition text-xs"
+                title="Add Node"
+              >
+                ➕
+              </Button>
+            </div>
+          )}
+        </div>
+        {node.children && node.children.length > 0 && expandedNodes.has(node.id) && (
+          <ul className="ml-6 mt-2">{renderTree(node.children)}</ul>
         )}
-      </List.Item>
+      </li>
     ));
   };
 
+  const Modal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
+    isOpen,
+    onClose,
+  }) => {
+    if (!isOpen || actionType === null) return null;
+
+    return (
+      <div
+        className="fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50 z-50"
+        onClick={onClose}
+      >
+        <div
+          className="bg-white p-6 rounded-lg shadow-lg"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            className="absolute top-2 right-2 text-white bg-red-500 p-1 rounded"
+            onClick={onClose}
+          >
+            X
+          </button>
+          <NodeForm
+            actionType={actionType}
+            existingNode={selectedNode}
+            onSubmit={handleFormSubmit}
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <Box p="md">
-      <Text size="xl" weight={700} mb="md">
-        Tree View
-      </Text>
-      <Modal opened={isModalOpen} onClose={() => setIsModalOpen(false)} title={actionType === 'add' ? 'Add Node' : 'Edit Node'}>
-        {actionType && <NodeForm actionType={actionType} existingNode={selectedNode} onSubmit={handleFormSubmit} />}
-      </Modal>
-      <List spacing="xs">{renderTree(hierarchicalTreeData)}</List>
-    </Box>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Tree View</h1>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ul className="space-y-4">{renderTree(hierarchicalTreeData)}</ul>
+    </div>
   );
 };
 
