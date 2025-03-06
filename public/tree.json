@@ -6,7 +6,7 @@
         "name": "University President",
         "description": "The President of the University",
         "parentId": null,
-        "type": "institute"
+        "type": "presidant"
       },
       {
         "id": 2,
